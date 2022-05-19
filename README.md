@@ -1,4 +1,4 @@
-# Course: The Odin Project
+# About
 
 This repository was created for projects on the course [The Odin Project](https://www.theodinproject.com/)
 
