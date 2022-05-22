@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Landing Page</title>
 
     <body>
       <header class="page-header">
         <div class="wrapper">
           <div class="container">
-            <a href="#hero">Header Logo</a>
+            <a class="page__logo" href="#hero">Header Logo</a>
 
             <nav class="header__nav">
               <ul class="nav__list">
@@ -32,14 +33,14 @@
         <!-- START HERO SECTION -->
         <section id="hero" class="section">
           <div class="wrapper">
-            <div class="container">
+            <div class="container container_section">
               <div class="hero__data">
                 <h1 class="hero__title">This website is awesome</h1>
-                <p class="hero__description">
+                <p class="hero__desc">
                   This website has some subtext that goes here under the main
                   title. It's a smaller font and the color is lower contrast
                 </p>
-                <button class="btn">Sign up</button>
+                <button class="btn" type="button">Sign up</button>
               </div>
 
               <img
@@ -55,7 +56,7 @@
         <!-- START INFO SECTION -->
         <section id="info" class="section">
           <div class="wrapper">
-            <div class="container">
+            <div class="container container_section">
               <h2 class="section__title">Some random information</h2>
 
               <ul class="info__list">
@@ -116,7 +117,7 @@
         <!-- START QUOTE SECTION -->
         <section id="quote" class="section">
           <div class="wrapper">
-            <div class="container">
+            <div class="container container_section">
               <figure class="quote">
                 <blockquote class="quote__message">
                   This is an inspiring quote, or a testimonial from a customer.
@@ -135,15 +136,17 @@
         <!-- START OUR SECTION -->
         <section id="our" class="section">
           <div class="wrapper">
-            <div class="container">
-              <div class="our__data">
-                <h3>Call to action! It's time!</h3>
-                <p>
-                  Sign up for our product by clicking
-                  that button right over there!
-                </p>
+            <div class="container container_section">
+              <div class="our__content">
+                <div class="content">
+                  <h3 class="content__title">Call to action! It's time!</h3>
+                  <p class="content__desc">
+                    Sign up for our product by clicking
+                    that button right over there!
+                  </p>
+                </div>
+                <button class="btn btn_secondary" type="button">Sign up</button>
               </div>
-              <button class="btn btn_secondary">Sign up</button>
             </div>
           </div>
         </section>
