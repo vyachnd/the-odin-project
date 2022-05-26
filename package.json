@@ -1,0 +1,26 @@
+{
+  "name": "the-odin-project",
+  "version": "1.0.0",
+  "description": "This repository was created for projects on the course [The Odin Project](https://www.theodinproject.com/)",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyachnd/the-odin-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vyachnd/the-odin-project/issues"
+  },
+  "homepage": "https://github.com/vyachnd/the-odin-project#readme",
+  "devDependencies": {
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
