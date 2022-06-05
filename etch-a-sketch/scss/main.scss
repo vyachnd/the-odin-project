@@ -1,7 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@import './vars';
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+// Body
+body {
+  background-color: $page-bg-color;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// Page Header
+.page-header {
+  background-color: $page-header-bg-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+
+  & .header__title {
+    color: $page-header-title-color;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+
+// Page Main
+.page-main {
+  flex-grow: 1;
+}
+
+// Page Footer
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+
+  & .footer__copyright {
+    color: $page-footer-copyright-color;
+    font-size: 14px;
+    font-weight: 400;
+
+    & .copyright__link {
+      color: inherit;
+      transition: color .15s ease-in-out;
+
+      &:hover {
+        color: $page-footer-copyright-link-hover-color;
+      }
+    }
+  }
 }
