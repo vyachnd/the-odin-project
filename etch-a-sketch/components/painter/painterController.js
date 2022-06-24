@@ -142,7 +142,7 @@ export default class PainterController {
     document.body.addEventListener('mouseup', (e) => self.onMouseUpOnField(e));
     painterField.addEventListener('mousemove', (e) => self.onMouseMoveOnField(e));
     painterField.addEventListener('contextmenu', (e) => e.preventDefault());
-
+    
     paintToolLabel.addEventListener('click', () => self.onSelectToolType('paint'));
     shadingToolLabel.addEventListener('click', () => self.onSelectToolType('shading'));
     lightingToolLabel.addEventListener('click', () => self.onSelectToolType('lighting'));
