@@ -43,11 +43,7 @@ function colorLighting(rgb) {
 }
 
 function getRandomColor() {
-  const rgb = {
-    r: 0,
-    g: 0,
-    b: 0,
-  };
+  const rgb = { r: 0, g: 0, b: 0 };
 
   Object.keys(rgb).forEach((key) => {
     rgb[key] = Math.floor(Math.random() * (255 + 1));
