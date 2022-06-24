@@ -2,6 +2,8 @@
 
 @import './vars';
 
+@import '../components/painter/scss/main.scss';
+
 *,
 *::before,
 *::after {
@@ -11,52 +13,41 @@
   font-family: Roboto, sans-serif;
 }
 
-// Body
 body {
-  background-color: $page-bg-color;
+  background-color: $theme-color-dark;
+}
+
+#app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-// Page Header
-.page-header {
-  background-color: $page-header-bg-color;
+.app__content {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-
-  & .header__title {
-    color: $page-header-title-color;
-    font-size: 24px;
-    font-weight: 700;
-  }
-}
-
-// Page Main
-.page-main {
   flex-grow: 1;
 }
 
-// Page Footer
-.page-footer {
+.app__footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 0;
+  padding: 30px 0;
 
   & .footer__copyright {
-    color: $page-footer-copyright-color;
-    font-size: 14px;
+    color: $theme-color-gray;
+    font-size: 12px;
     font-weight: 400;
 
     & .copyright__link {
-      color: inherit;
+      color: $theme-color-orange;
+      text-decoration: none;
       transition: color .15s ease-in-out;
 
       &:hover {
-        color: $page-footer-copyright-link-hover-color;
+        color: $theme-color-orange-l;
       }
     }
   }
