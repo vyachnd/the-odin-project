@@ -1,0 +1,213 @@
+@import './vars';
+
+.painter {
+  background-color: $painter-color-dark-m;
+  display: flex;
+  width: 780px;
+  height: 500px;
+  box-shadow: 0px 0px 16px #171717;
+
+  & input:focus {
+    outline: none;
+  }
+
+  .painter-side_left {
+    border: $painter-border;
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  .painter-side_right {
+    flex-grow: 1;
+  }
+
+  .painter__header {
+    border-bottom: $painter-border;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 24px;
+
+    & .header__title {
+      color: $painter-color-white;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .painter__tools {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px);
+    padding: 12px 0;
+    gap: 6px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+
+    & .tool-container {
+      display: flex;
+      flex-direction: column;
+
+      &.tool-container_bottom {
+        margin: auto 0 0;
+      }
+
+      & .tool__label {
+        color: $painter-color-white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        height: 30px;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+        transition: background-color .15s ease-in;
+
+        &:hover {
+          background-color: $painter-color-dark-mx;
+
+          & input[type='input'] {
+            color: $painter-color-white-m;
+          }
+
+          & input:not(:checked)::before {
+            background-color: $painter-color-dark-lx;
+          }
+        }
+
+        &.tool_checked,
+        &.tool_checked .tool__radio::before {
+          cursor: auto;
+        }
+
+        &.tool_checked .tool__radio::before {
+          background-color: $painter-color-orange;
+          border-color: $painter-color-orange;
+        }
+
+        & .tool__radio,
+        & .tool__checkbox {
+          width: 0px;
+          height: 0px;
+          position: relative;
+
+          &::before {
+            content: '';
+            background-color: $painter-color-dark-mx;
+            border: $painter-border-x;
+            border-radius: 50%;
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 50%;
+            width: 16px;
+            height: 16px;
+            transform: translateY(50%);
+            transition: background-color .15s ease-in,
+              border-color .15s ease-in;
+          }
+
+          &:checked::before {
+            background-color: $painter-color-orange;
+            border-color: $painter-color-orange;
+          }
+        }
+
+        & .tool__checkbox::before {
+          border-radius: 0;
+        }
+
+        & .tool__color {
+          background-color: transparent;
+          border: none;
+          width: 28px;
+          height: 16px;
+          -webkit-appearance: none;
+
+          &::-webkit-color-swatch-wrapper {
+            padding: 0;
+          }
+
+          &::-webkit-color-swatch {
+            border: $painter-border-x;
+          }
+        }
+
+        & .tool__input {
+          background-color: $painter-color-dark-mx;
+          border: $painter-border-x;
+          color: $painter-color-dark-lx;
+          width: 36px;
+          height: 20px;
+          font-weight: 500;
+          font-size: 12px;
+          text-align: center;
+          transition: border-color .15s ease-in,
+                      color .15s ease-in;
+
+          &:focus {
+            border-color: $painter-color-white;
+            color: $painter-color-white;
+          }
+        }
+      }
+
+      & .tool__button {
+        background-color: $painter-color-dark-mx;
+        border: $painter-border-x;
+        color: $painter-color-dark-lx;
+        cursor: pointer;
+        height: 28px;
+        margin: 0 24px;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: color .15s ease-in,
+                    border-color .15s ease-in;
+
+        &:hover {
+          color: $painter-color-white-m;
+          border-color: $painter-color-white-m;
+        }
+      }
+    }
+  }
+
+  .painter__field {
+    background: url('../etch-a-sketch/components/painter/assets/transparency-bg.jpg') repeat;
+    cursor: none;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    & .field__cursor {
+      background-color: $painter-color-white-o25;
+      border: $painter-border;
+      display: none;
+      position: absolute;
+      pointer-events: none;
+      z-index: 10000;
+
+      &.field__cursor_show {
+        display: block;
+      }
+    }
+
+    & .field__pixels {
+      background-color: rgba(0, 0, 0, .15);
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      & .pixel {
+        position: absolute;
+        pointer-events: none;
+      }
+    }
+  }
+}
