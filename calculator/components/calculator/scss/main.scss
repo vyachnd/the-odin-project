@@ -1,0 +1,177 @@
+@import './themes';
+
+.calculator {
+  background-color: $calc-theme-dark_color-dark-l;
+  border: 1px solid $calc-theme-dark_color-dark-lm;
+  box-shadow: 0 4px 16px $calc-theme-dark_color-dark;
+  box-sizing: content-box;
+  display: flex;
+  width: 520px;
+  height: 340px;
+  letter-spacing: 0.06em;
+
+  & .calculator__panel {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 100%;
+
+    & .panel__display {
+      height: 90px;
+
+      & .display__output,
+      & .display__input {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 12px;
+        font-weight: 500;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      & .display__output {
+        color: $calc-theme-dark_color-gray;
+        height: 35px;
+        font-size: 12px;
+      }
+
+      & .display__input {
+        color: $calc-theme-dark_color-white;
+        height: 55px;
+        font-size: 16px;
+      }
+    }
+
+    & .panel__button {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      overflow: hidden;
+
+      & .button {
+        background-color: $calc-theme-dark_color-dark-l-a3;
+        color: $calc-theme-dark_color-gray;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 70px;
+        height: 50px;
+        -webkit-user-select: none;
+        user-select: none;
+        transition: background-color .25s ease-in-out,
+                    color .25s ease-in-out;
+
+        &:hover {
+          background-color: $calc-theme-dark_color-dark-lm;
+          color: $calc-theme-dark_color-white;
+        }
+
+        &.button_middle {
+          width: 140px;
+        }
+
+        &.button_operator,
+        &.button_answer {
+          background-color: $calc-theme-dark_color-orange;
+          color: $calc-theme-dark_color-white;
+
+          &:hover {
+            background-color: $calc-theme-dark_color-orange-l;
+            color: $calc-theme-dark_color-dark-l-a3;
+          }
+        }
+
+        & .button__text {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        &.button_pressed {
+          color: $calc-theme-dark_color-white;
+
+          &::before {
+            background-color: $calc-theme-dark_color-white;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            animation: button-pressed .4s ease-in-out forwards;
+          }
+        }
+
+        &.button_operator.button_pressed,
+        &.button_answer.button_pressed {
+          color: $calc-theme-dark_color-dark-l-a3;
+
+          &::before {
+            background-color: $calc-theme-dark_color-dark;
+          }
+        }
+
+        @keyframes button-pressed {
+          50% {
+            opacity: .075;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  & .calculator__history {
+    background-color: $calc-theme-dark_color-dark-l-a2;
+    width: 240px;
+    height: 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $calc-theme-dark_color-dark-lm;
+    }
+
+    & .history {
+      height: 60px;
+      cursor: pointer;
+      transition: background-color .25s ease-in-out;
+
+      &:hover {
+        background-color: $calc-theme-dark_color-dark-lm;
+      }
+
+      & .history__output,
+      & .history__input {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 0 12px;
+        font-weight: 500;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      & .history__output {
+        color: $calc-theme-dark_color-gray;
+        height: 30px;
+        font-size: 10px;
+      }
+
+      & .history__input {
+        color: $calc-theme-dark_color-white;
+        height: 30px;
+        font-size: 12px;
+      }
+    }
+  }
+}
