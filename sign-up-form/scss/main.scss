@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+@import './themes';
+
 *,
 *::before,
 *::after {
@@ -7,4 +9,45 @@
   padding: 0;
   margin: 0;
   font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-size: 13px;
+  font-weight: 500;
+
+  & .footer__copyright {
+    color: $color-gray;
+
+    & .copyright__link {
+      border-radius: 4px;
+      padding: 4px 6px;
+      color: $color-blue;
+      transition: background-color .25s ease-in-out,
+                  color .25s ease-in-out;
+
+      &:hover {
+        background-color: $color-blue;
+        color: $color-white;
+      }
+    }
+  }
 }
